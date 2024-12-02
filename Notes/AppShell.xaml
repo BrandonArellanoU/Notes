@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Notes.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:Notes.Views"
+    Shell.FlyoutBehavior="Flyout">
+
+    <TabBar>
+        <!-- Primer ShellContent -->
+        <ShellContent
+            Title="Notas"
+            ContentTemplate="{DataTemplate views:AllNotesPage}"
+            Icon="{OnPlatform 'icon_notes.png', iOS='icon_notes_ios.png', MacCatalyst='icon_notes_ios.png'}" />
+
+        <!-- Segundo ShellContent dentro del TabBar -->
+        <ShellContent
+            Title="About"
+            ContentTemplate="{DataTemplate views:AboutPage}"
+            Icon="{OnPlatform 'icon_about.png', iOS='icon_about_ios.png', MacCatalyst='icon_about_ios.png'}" />
+    </TabBar>
+
+    <!-- FlyoutItem adicional debajo del primer ShellContent -->
+    <FlyoutItem Title="About"
+                Icon="{OnPlatform 'icon_about.png', iOS='icon_about_ios.png', MacCatalyst='icon_about_ios.png'}">
+        <ShellContent
+            Title="About"
+            ContentTemplate="{DataTemplate views:AboutPage}" />
+    </FlyoutItem>
+
+</Shell>

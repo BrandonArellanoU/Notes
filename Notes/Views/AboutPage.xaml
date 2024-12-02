@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:Notes.Models"
+             x:Class="Notes.Views.AboutPage">
+    <ContentPage.BindingContext>
+        <models:About />
+    </ContentPage.BindingContext>
+    <VerticalStackLayout Spacing="10" Margin="10">
+        <Label FontSize="22" FontAttributes="Bold" 
+           Text="Conóceme un poco más sobre mí" 
+           VerticalOptions="Center" 
+           HorizontalOptions="Center" />
+        <Image Source="perfil.png"
+           SemanticProperties.Description="Hola soy Brandon A."
+           HeightRequest="100" />
+        <Label FontSize="16" 
+           Text="Mi nombre es Brandon Arellano y estoy estudiando la ingenieria de software en la universidad de las Américas (UDLA), estoy cursando el 5to semestre de 9 semestres, tengo 22 años y me gusta la carrera por el potencial que tiene para cambiar el mundo y espero algún día hacerlo al menos un poco mejor. " 
+           VerticalOptions="Center" 
+           HorizontalOptions="Center" />    
+        <HorizontalStackLayout Spacing="10">
+            <Label FontSize="22" FontAttributes="Bold" Text="{Binding Title}" VerticalOptions="End" />
+            <Label FontSize="22" Text="{Binding Version}" VerticalOptions="End" />
+        </HorizontalStackLayout>
+
+        <Label Text="{Binding Message}" />
+        <Button Text="Cónoce más" Clicked="LearnMore_Clicked" />
+    </VerticalStackLayout>
+
+</ContentPage>
